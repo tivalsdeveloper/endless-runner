@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#071525">
+  <title>Endless Runner — tivalsdeveloper</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <canvas id="game" aria-label="Endless Runner game"></canvas>
+    <section id="hud" class="hidden" aria-live="polite">
+      <div><b id="score">0</b><small>SCORE</small></div><div><b id="coins">0</b><small>COINS</small></div>
+      <div id="hearts" class="hearts">♥♥♥</div><div><b id="speed">1.0×</b><small>SPEED</small></div>
+      <button id="pauseBtn" class="icon-btn" aria-label="Pause">Ⅱ</button>
+      <div id="powerTimers"></div>
+    </section>
+    <div id="toast"></div>
+    <section id="menu" class="panel screen active">
+      <p class="eyebrow">NEON WILDS</p><h1>ENDLESS<br><span>RUNNER</span></h1>
+      <p class="bestline">HIGH SCORE <b id="menuBest">0</b></p>
+      <button class="primary" data-action="play">PLAY</button>
+      <button data-screen="how">HOW TO PLAY</button><button data-screen="characters">RUNNERS</button>
+      <button data-screen="missions">MISSIONS</button><button data-screen="settings">SETTINGS</button><button data-screen="credits">CREDITS</button>
+      <footer>Powered by <b>tivalsdeveloper</b></footer>
+    </section>
+    <section id="how" class="panel screen"><h2>HOW TO PLAY</h2><p>Run automatically. Jump over rocks and barriers, slide under branches, collect coins and grab power-ups.</p><div class="keygrid"><span>SPACE / ↑ / W</span><b>JUMP</b><span>↓ / S</span><b>SLIDE</b><span>P / ESC</span><b>PAUSE</b><span>SWIPE</span><b>UP / DOWN</b></div><button data-screen="menu">BACK</button></section>
+    <section id="settings" class="panel screen"><h2>SETTINGS</h2><button id="soundToggle">SOUND: ON</button><button id="musicToggle">MUSIC: ON</button><button id="touchToggle">TOUCH BUTTONS: ON</button><button data-screen="menu">BACK</button></section>
+    <section id="characters" class="panel screen"><h2>RUNNERS</h2><p class="wallet">TOTAL COINS: <b id="wallet">0</b></p><div id="characterList"></div><button data-screen="menu">BACK</button></section>
+    <section id="missions" class="panel screen"><h2>MISSIONS</h2><div id="missionList"></div><h3>ACHIEVEMENTS</h3><div id="achievementList"></div><button data-screen="menu">BACK</button></section>
+    <section id="credits" class="panel screen"><h2>CREDITS</h2><p>Game design, code and original canvas graphics</p><h3>tivalsdeveloper</h3><p>Built with HTML5 Canvas, CSS3 and Vanilla JavaScript.</p><button data-screen="menu">BACK</button><footer>Powered by <b>tivalsdeveloper</b></footer></section>
+    <section id="pause" class="panel screen"><h2>PAUSED</h2><p>SCORE: <b id="pauseScore">0</b></p><button class="primary" data-action="resume">RESUME</button><button data-action="restart">RESTART</button><button data-action="menu">MAIN MENU</button></section>
+    <section id="over" class="panel screen"><p class="eyebrow">RUN ENDED</p><h2>GAME OVER</h2><div id="newRecord" class="record hidden">🏆 NEW HIGH SCORE!</div><div class="stats"><span>Distance<b id="finalDistance">0 m</b></span><span>Score<b id="finalScore">0</b></span><span>Coins<b id="finalCoins">0</b></span><span>Best<b id="finalBest">0</b></span></div><button class="primary" data-action="restart">RUN AGAIN</button><button data-action="menu">MAIN MENU</button></section>
+    <div id="touchControls" class="hidden"><button data-control="slide">SLIDE</button><button data-control="jump">JUMP</button></div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
